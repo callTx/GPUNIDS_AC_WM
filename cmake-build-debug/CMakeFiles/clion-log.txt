@@ -1,0 +1,176 @@
+C:\cygwin64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:132 (file):
+  file failed to open for writing (No such file or directory):
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:142 (CMAKE_DETERMINE_COMPILER_ID_WRITE)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:40 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCCompiler.cmake:121 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt
+
+
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:132 (file):
+  file failed to open for writing (No such file or directory):
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:142 (CMAKE_DETERMINE_COMPILER_ID_WRITE)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:40 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCCompiler.cmake:121 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt
+
+
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:132 (file):
+  file failed to open for writing (No such file or directory):
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:142 (CMAKE_DETERMINE_COMPILER_ID_WRITE)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:40 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCCompiler.cmake:121 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt
+
+
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:132 (file):
+  file failed to open for writing (No such file or directory):
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:142 (CMAKE_DETERMINE_COMPILER_ID_WRITE)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:40 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCCompiler.cmake:121 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt
+
+
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:642 (file):
+  file failed to open for writing (No such file or directory):
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/CMakeError.log
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:55 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCCompiler.cmake:121 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt
+
+
+-- The C compiler identification is unknown
+CMake Error: Could not open file for write in copy operation /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CMakeCCompiler.cmake.tmp
+CMake Error: : System Error: No such file or directory
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCCompiler.cmake:184 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+CMake Error: Could not find cmake module file: /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CMakeCCompiler.cmake
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:141 (file):
+  file problem creating directory:
+  /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdCXX
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:40 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCXXCompiler.cmake:113 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt
+
+
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:141 (file):
+  file problem creating directory:
+  /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CompilerIdCXX
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:40 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCXXCompiler.cmake:113 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt
+
+
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:642 (file):
+  file failed to open for writing (No such file or directory):
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/CMakeError.log
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCompilerId.cmake:55 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)
+  /usr/share/cmake-3.6.2/Modules/CMakeDetermineCXXCompiler.cmake:113 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt
+
+
+-- The CXX compiler identification is unknown
+CMake Error: Could not open file for write in copy operation /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CMakeCXXCompiler.cmake.tmp
+CMake Error: : System Error: No such file or directory
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeDetermineCXXCompiler.cmake:179 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+CMake Error: Could not find cmake module file: /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/3.6.2/CMakeCXXCompiler.cmake
+CMake Warning at /usr/share/cmake-3.6.2/Modules/Platform/CYGWIN.cmake:15 (message):
+  CMake no longer defines WIN32 on Cygwin!
+
+  (1) If you are just trying to build this project, ignore this warning or
+  quiet it by setting CMAKE_LEGACY_CYGWIN_WIN32=0 in your environment or in
+  the CMake cache.  If later configuration or build errors occur then this
+  project may have been written under the assumption that Cygwin is WIN32.
+  In that case, set CMAKE_LEGACY_CYGWIN_WIN32=1 instead.
+
+  (2) If you are developing this project, add the line
+
+    set(CMAKE_LEGACY_CYGWIN_WIN32 0) # Remove when CMake >= 2.8.4 is required
+
+  at the top of your top-level CMakeLists.txt file or set the minimum
+  required version of CMake to 2.8.4 or higher.  Then teach your project to
+  build on Cygwin without WIN32.
+Call Stack (most recent call first):
+  /usr/share/cmake-3.6.2/Modules/CMakeSystemSpecificInformation.cmake:36 (include)
+  CMakeLists.txt
+
+
+-- Check for working C compiler: /usr/bin/cc
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeTestCCompiler.cmake:35 (file):
+  file failed to open for writing (No such file or directory):
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeTestCCompiler.cmake:47 (try_compile):
+  Unknown extension ".c" for file
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+
+  try_compile() works only for enabled languages.  Currently these are:
+
+    C CXX
+
+  See project() command to enable other languages.
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+-- Check for working C compiler: /usr/bin/cc -- broken
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeTestCCompiler.cmake:58 (file):
+  file failed to open for writing (No such file or directory):
+
+    /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/CMakeError.log
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+CMake Error at /usr/share/cmake-3.6.2/Modules/CMakeTestCCompiler.cmake:61 (message):
+  The C compiler "/usr/bin/cc" is not able to compile a simple test program.
+
+  It fails with the following output:
+
+   
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+-- Configuring incomplete, errors occurred!
+See also "/cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+CMake Error: Cannot open file for write: /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeCache.txt.tmp
+CMake Error: : System Error: No such file or directory
+CMake Error: Unable to open cache file for save. /cygdrive/c/Users/Daniel/Documents/tcc/WuManber/GPUNIDS_AC_WM/cmake-build-debug/CMakeCache.txt
+CMake Error: : System Error: No such file or directory

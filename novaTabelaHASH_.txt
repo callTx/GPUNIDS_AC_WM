@@ -1,0 +1,97 @@
+B=3
+for(i:   padroes.size()){  A B B D
+	strTemp = padroes[i];
+	idxInicio = 0;
+	idxFim = B -1;
+	while(idxFim<strTemp.length()){  B B D
+		subStrPerm = strTemp.substr(idxInicio,B);
+
+		posIn=0;
+		for(d=strlen(tbHData); d<strTemp.size()+strlen(tbHData)){
+			posIn =d;
+			tbHData[d] = strTemp.at(d);
+		}
+			0 1 2 3 4 5 6 7  8 9 10 11  12   
+		1- [A B B D A B B D  A A  B  D  A A B D  ]   size: Somatoria[strTemp.size()*(strTemp.size()-(B-1))]
+			
+		h = hash(subStrPerm,c,M)
+		if(tbHPosData[h] == null) tbHPosData[h] = posIn;
+			 10    18       21
+		2- [ (4+1) (8+1)   (0+1)   null]   size:M
+
+		cont = tbHContPadHash[h];
+		tbHContPadHash[25] = cont +1; 
+			 10	  17	 21    
+		3- [ 1 ... 1  0  1 0 ...]    size:M
+
+
+		tbHSizePadHash[h+cont] = strTemp.size();
+			 10	  21  17 18 19
+		5- [ 4     4   4  6  4]          size:M
+
+	}
+}
+
+ABBDABBDAABDAABDDDAADDAABABABABADADADADABEDEDABEDEDABEDEDABEDEDAAAAAAAAABBBBBBBBDABGDABGABEDEABEDEABEDEDEDADEDA
+    0       1     2       3     4       5       6      7      8       9      10
+ {"ABBD","AABD","DDAA","BABA","DADA","BEDEDA","AAAA","BBBB","DABG","ABEDE","DEDA"}
+ 
+tbHPosPadrao[18]:0   tbHContPadHash[18]: 1   tbHSizePadHash[18]:4
+                          18
+tbHContPadHash [           1          ]
+                 0  
+tbHSizePadHash [ 4        ]
+
+tbHIdxSizePadHash [          ] 
+	                     18
+tbHPosPadrao[            0   5       ]
+
+
+
+hashEsgotadoPadraoAtual FALSE
+
+bool hashEsgotado(int hash){
+	arrHashEsgotados = [18,34]
+}
+ 
+
+			
+		18  34  18      18  34      18  21
+strTemp	AAB|ACD|AAB 	AAC|ABD     AAC|AAA
+ 
+
+		 18  34  18      18  34      18  21 
+strTemp2 AAB|ACD|AAB 	AAC|ABD     AAC|AAA
+
+for(j){
+	hashEsgotadoPadraoAtual= FALSE;
+	
+	while(){
+	
+		if(hash == hash2 && !(hashEsgotado(hash))){
+			if(!hashEsgotadoPadraoAtual){
+				
+				if(!strTemp.compare(strTemp2)){
+					
+					add... strTemp
+					hashEsgotadoPadraoAtual = TRUE;
+				}else{
+					
+					add.. strTemp2
+					hashEsgotadoPadraoAtual = TRUE;
+				}
+				
+				
+			}
+		}
+		
+	}
+       
+	if(j==padroes.size()-1){
+		arrHashEsgotados.push(hash);
+	}
+	
+}
+	
+ 18           18	  18			34            34       21
+AAB|ACD|AAB, AAC|ABD, AAC|AAA,  AAB|ACD|AAB, AAC|ABD, AAC|AAA

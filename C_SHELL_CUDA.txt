@@ -1,0 +1,95 @@
+// Example program
+#include <iostream>
+#include <stdio.h>
+#include <cstring>
+#include <math.h>
+#include <vector>
+
+void wmkernel(char* dataTemp,int* hash,int* sbDSz,int* tnHsSz, int N);
+
+int B = 3;
+int N =9;
+int c = 4;
+int M = 44;
+
+std::vector<std::vector<std::string>> tabelaHASH_;
+
+int main()
+{
+  tabelaHASH_ = std::vector<std::vector<std::string>> (M,std::vector<std::string>());
+  tabelaHASH_[25].push_back("ABB");
+  tabelaHASH_[25].push_back("BBD");
+  
+  char *dataTemp;
+ 
+  int sizeChar = N * sizeof(char);
+  
+  //cudaMalloc( (void **)&d_strBloco,size );
+  dataTemp = (char*) malloc(sizeChar);
+  dataTemp = "ABEDEDABG";
+  
+  int *hash,*sbDSz,*tnHsSz;
+  int *d_hash,*d_sbDSz,*d_tnHsSz;
+  int sizeInt = N* sizeof(int);
+  hash = (int*) malloc(sizeInt);
+  sbDSz = (int*) malloc(sizeInt);
+  tnHsSz = (int*) malloc(sizeInt);
+  //cudaMalloc( (void **)&d_hash,sizeInt );
+  //cudaMalloc( (void **)&d_sbDSz,sizeInt );
+  //cudaMalloc( (void **)&d_tnHsSz,sizeInt );
+
+  
+  //cudaMemcpy(d_hash,hash,sizeInt,cudaMemcpyHostToDevice);
+  //cudaMemcpy(d_sbDSz,sbDSz,sizeInt,cudaMemcpyHostToDevice);
+  //cudaMemcpy(d_tnHsSz,sbDSz,sizeInt,cudaMemcpyHostToDevice);
+
+  //wmkernel<<<(N+B-1)/B, B >>>(dataTemp,d_hash,d_sbDSz,d_tnHsSz,N);
+  wmkernel(dataTemp,hash,sbDSz,tnHsSz,N);
+  
+  //cudaFree(d_strBloco);
+  //cudaFree(d_sbDSz);
+}
+
+/*
+__global__ void wmkernel(char* dataTemp,int* hash,int N){
+
+} 
+*/   
+
+void wmkernel(char* dataTemp,int* hash,int* sbDSz,int* tnHsSz, int N){
+    //int index = threadIdx.x + blockIdx.x * blockDim.x;
+    int index= 0;
+    
+    if(index < N){
+        char strBloco[B];
+        memcpy( strBloco, &dataTemp[index], B );
+        //subbuff[B-1] = '\0'; 
+        //strBloco = subStr;
+        //std::cout<<"strBloco[0]: "<<strBloco<<std::endl;
+        
+        hash[index] = 0;
+        //std::cout<<"strBloco size: "<<strlen(strBloco)<<std::endl;
+        for(int i=0; i<strlen(strBloco);i++){
+            hash[index] = hash[index] + strBloco[i]*pow(c,i);
+            hash[index] = hash[index] % M; 
+        }
+        //std::cout<<" hash[index]: "<< hash[index]<<std::endl;
+        //std::cout<<" strlen(dataTemp): "<<strlen(dataTemp)<<std::endl;
+        char subData[strlen(dataTemp)];
+        memcpy( subData, &dataTemp[0], index + B );
+        
+        sbDSz[index] = strlen(subData);
+        tnHsSz[index] = tabelaHASH_[hash[index]].size();
+        //std::cout<<" tnHsSz[index]: "<<tnHsSz[index]<<std::endl;
+        for(unsigned t=0; t< tnHsSz[index];t++){
+            bool match= true;
+            std::string str = tabelaHASH_[hash[index]].at(t);
+            int _final = sbDSz[index] -1;
+            for(int ch=tabelaHASH_[hash[index]].at(t).length()-1;ch>=0; --ch ){
+                if(_final >=0){
+                    
+                }
+            }
+        }
+    }
+}

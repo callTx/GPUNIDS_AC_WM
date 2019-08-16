@@ -1,0 +1,53 @@
+m=4=pos B=3            
+
+0 1 2 | 3 4 5 | 6 7 8  
+A B E | D E D | A B G
+
+   N:9/B:3t/b = 3 blocos
+  B E   D
+    E   D E
+	    D E D
+	      E D  A
+		       A  B G
+                                          B=3
+										   
+int index = threadIdx.x + blockIdx.x * blockDim.x;
+if(index < N -B){
+
+	//pos[index] = m;
+	tPos_B1[index] = (index -B +1) -1;
+
+	std::strBloco[index] = dataTemp.subStr(index,B);
+	hash[index] =0;
+	for(int i=0;i<strBloco[index].length();i++){
+	  hash[index] = hash[index] + strBloco[i]*pow(c,i);
+	  hash[index] = hash[index] % M;
+	}
+
+	std::string subData[index] = dataTemp.substr(0,index +B);
+	int sbDSz[index] = subData[index].size();
+	int tbHsSz[index] = tabelaHASH_[has[index]].size();
+	for(unsigned t =0; t< tbHSz[index]; t++){
+		bool match = true;
+		std::string str = tabelaHASH_[hash[index]].at(t);
+		int _final = sbDSz[index] -1;
+		for (int ch = tabelaHASH_[hash[index]].at(t).length() - 1; ch>=0; --ch){
+			if(_final>=0){
+				if(str.at(ch) == subData[index].at(_final)){
+					_final = _final - 1;
+					
+				}else{
+					match = fase;
+					break;
+				}
+			}else{
+				match =false;
+				break;
+			}
+		}
+		if (match){
+			int posicao = _final +1;
+			std::cout<<"\r"<<">>>>>>>>>>>>  Na posicao "<<posicao<<", ha um match com o padrao: "<<tabelaHASH_[hash[index]].at(t)<<std::endl;
+		}
+	}
+}
