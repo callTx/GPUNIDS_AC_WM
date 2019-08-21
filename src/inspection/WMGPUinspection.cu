@@ -621,7 +621,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                 //cout<<dataTemp2[p];
 			}
 
-			cout <<"catch erro PrecarregaTabelaHash: "<<endl;
+			
 
 			int hash2 = 0;
             for (int i = 0; i < strlen(dataTemp); i++) {
@@ -629,6 +629,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                 hash2 = hash2 % M;
 			}
 			
+			cout<<"catch erro PrecarregaTabelaHash: "<<endl;
 			
 			if(hash == hash2   ) {//if(hash == hash2 && !(hashEsgotado(hash))  ) {
                 if(!hashEsgotadoPadraoAtual) {
