@@ -629,12 +629,15 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                 hash2 = hash2 % M;
 			}
 			
-			cout<<"catch erro PrecarregaTabelaHash: "<<endl;
 			
+
 			if(hash == hash2   ) {//if(hash == hash2 && !(hashEsgotado(hash))  ) {
+
                 if(!hashEsgotadoPadraoAtual) {
                     if (!strTemp.compare(strTemp2)) {
 
+							cout<<"catch erro PrecarregaTabelaHash: "<<endl;
+							
 							int posIn = 0;
                             int min = strlen(tbHData);
 							
