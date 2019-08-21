@@ -599,11 +599,13 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 	//dataTemp2 = (char*) malloc(sizeCharDT2);
 	dataTemp2 = (char*) calloc(B,sizeCharDT2);
 	
-	std::cout <<"\ncatch erro PrecarregaTabelaHash: "<<std::endl;
 	
+
 	for(int j=0;j<padroes.size();j++) {
         bool hashEsgotadoPadraoAtual = false;
 		std::string strTemp2 = padroes[j];
+
+		std::cout <<"catch erro PrecarregaTabelaHash: "<<std::endl;
 
 		int idxInicio2 = 0;
 		int idxFim2 = B - 1;
