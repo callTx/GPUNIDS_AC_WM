@@ -789,14 +789,14 @@ void WMGPUInspection::vecPermu1_1(){
                 hash = hash + dataTemp[i] * (c ^ (i));
                 hash = hash % M;
 			}
-			std::cout <<"catch erro: "<<std::endl;
+			
 			//cout<<"hash: "<<hash<<std::endl;
 			
 			if(!(hashEsgotado(hash))){
                 PrecarregaTabelaHash(strTemp, hash,dataTemp);
 			}
 			
-			
+			std::cout <<"catch erro: "<<std::endl;
 			
 			//PrecarregaTabelaHash(strTemp, hash,dataTemp);
 			//PrecarregaTabelaHash(subStrPerm,i);
