@@ -593,7 +593,7 @@ void WMGPUInspection::tabelaIdxHash(){
 
 void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* dataTemp){
 	
-
+	std::cout <<"catch erro PrecarregaTabelaHash: "<<std::endl;
 	char* dataTemp2;
     int sizeCharDT2 = B * sizeof(char);
 	//dataTemp2 = (char*) malloc(sizeCharDT2);
@@ -796,7 +796,7 @@ void WMGPUInspection::vecPermu1_1(){
                 PrecarregaTabelaHash(strTemp, hash,dataTemp);
 			}
 			
-			std::cout <<"catch erro: "<<std::endl;
+			
 			
 			//PrecarregaTabelaHash(strTemp, hash,dataTemp);
 			//PrecarregaTabelaHash(subStrPerm,i);
