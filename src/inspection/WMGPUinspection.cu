@@ -639,14 +639,16 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 							
 
 							int posIn = 0;
-                            int min = strlen(tbHData);
+							int min = strlen(tbHData);
+							
+							cout<<" strlen(tbHData): "<<min<<endl;
 							
                             posIn = min;
                             int max = strTemp.size() + strlen(tbHData);
                             int idx = 0;
 							cout << "\n";
 
-							cout<<"catch erro PrecarregaTabelaHash: "<<endl;
+							
 							
 							//cout<<"min: "<<min<<"\n";
 							//cout<<"max: "<<max<<"\n";
