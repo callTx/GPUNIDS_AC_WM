@@ -605,7 +605,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
         bool hashEsgotadoPadraoAtual = false;
 		std::string strTemp2 = padroes[j];
 
-		std::cout <<"catch erro PrecarregaTabelaHash: "<<std::endl;
+		
 
 		int idxInicio2 = 0;
 		int idxFim2 = B - 1;
@@ -613,6 +613,8 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 		
 		while(idxFim2<strTemp2.length()) {
 			std::string subStrPerm2 = strTemp2.substr(idxInicio2,B);
+
+			std::cout <<"catch erro PrecarregaTabelaHash: "<<std::endl;
 
 			for (int p = 0; p <subStrPerm2.size(); ++p) {
                 dataTemp2[p] = subStrPerm2[p];
