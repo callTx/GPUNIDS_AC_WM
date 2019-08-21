@@ -27,6 +27,6 @@ vector <vector> [A B C A A A B A C  C C  C  A  B ...] padroes todos
 3 tbHContPadHash  [...  3 ...]
 				      25
 4 tbHindexSizePadHash [ ... 73 ...  ]
-                     73
-5 tbHSizePadHash [...  2  3  7 ... ]
+                       73
+5 tbHSizePadHash [...  4  4  4 ... ]
 
