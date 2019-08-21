@@ -614,13 +614,15 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 		while(idxFim2<strTemp2.length()) {
 			std::string subStrPerm2 = strTemp2.substr(idxInicio2,B);
 
-			std::cout <<"catch erro PrecarregaTabelaHash: "<<std::endl;
+			
 
 			for (int p = 0; p <subStrPerm2.size(); ++p) {
                 dataTemp2[p] = subStrPerm2[p];
                 //cout<<dataTemp2[p];
 			}
-			
+
+			cout <<"catch erro PrecarregaTabelaHash: "<<endl;
+
 			int hash2 = 0;
             for (int i = 0; i < strlen(dataTemp); i++) {
                 hash2 = hash2 + dataTemp2[i] * (c ^ (i));
