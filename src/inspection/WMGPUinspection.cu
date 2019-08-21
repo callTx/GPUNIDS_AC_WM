@@ -782,14 +782,14 @@ void WMGPUInspection::vecPermu1_1(){
 					cout<<dataTemp[p];
 				//}
 			}
-			std::cout <<"catch erro: "<<std::endl;
+			
 
 			int hash = 0;
             for (int i = 0; i < strlen(dataTemp); i++) {
                 hash = hash + dataTemp[i] * (c ^ (i));
                 hash = hash % M;
 			}
-			
+			std::cout <<"catch erro: "<<std::endl;
 			//cout<<"hash: "<<hash<<std::endl;
 			
 			if(!(hashEsgotado(hash))){
