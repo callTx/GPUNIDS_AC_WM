@@ -598,7 +598,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
     int sizeCharDT2 = B * sizeof(char);
 	//dataTemp2 = (char*) malloc(sizeCharDT2);
 	//dataTemp2 = (char*) calloc(B,sizeCharDT2);
-	dataTemp2 = (char*) calloc(nP,sizeof(char));
+	dataTemp2 = (char*) calloc(tbHDataSize,sizeof(char));
 	
 
 	for(int j=0;j<padroes.size();j++) {
@@ -769,7 +769,7 @@ void WMGPUInspection::vecPermu1_1(){
     int sizeCharDT = B * sizeof(char);
 	//dataTemp = (char*) malloc(sizeCharDT);
 	//dataTemp = (char*) calloc(B,sizeCharDT);
-	dataTemp = (char*) calloc(nP,sizeof(char));
+	dataTemp = (char*) calloc(tbHDataSize,sizeof(char));
     //vecpermu = std::vector<std::vector<std::string>>(nP,std::vector<std::string>());
 
 	
