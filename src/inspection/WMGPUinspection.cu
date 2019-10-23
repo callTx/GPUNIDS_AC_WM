@@ -416,8 +416,11 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
 	
 	for (int i =0;i< nP;i++) {
 		
-        tbHDataSize = tbHDataSize + padroes.at(i).size()*(padroes.at(i).size() - (B-1));
+		tbHDataSize = tbHDataSize + padroes.at(i).size()*(padroes.at(i).size() - (B-1));
+		       
 	}
+
+	arrHashEsgotados = std::vector<int> (tbHDataSize);
 	
 	//cout<<"tbHDataSize: "<<tbHDataSize<<"\n";
 
@@ -437,7 +440,7 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
     tbHSizePadHash = (int*) malloc(sizeInt);
     tbHIdxSizePadHash = (int*) malloc(sizeInt);
 	//tbHData = (char*) malloc(sizeChar);
-	tbHData = (char*) calloc(tbHDataSize,sizeChar);
+	tbHData = (char*)calloc(tbHDataSize, sizeof(char));//tbHData = (char*) calloc(tbHDataSize,sizeChar);
 	//================fim aloca host tbHPosData/tbHContPadHash/tbHSizePadHash/tbHIdxSizePadHash/tbHData
 	
 	
@@ -594,12 +597,12 @@ void WMGPUInspection::tabelaIdxHash(){
 void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* dataTemp){
 	
 	
-	char* dataTemp2;
+	char* dataTemp2 = NULL;//char* dataTemp2;
 	//int sizeCharDT2 = B * sizeof(char);
-	size_t sizeChar = tbHDataSize * sizeof(char);
+	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
 	//dataTemp2 = (char*) malloc(sizeCharDT2);
 	//dataTemp2 = (char*) calloc(B,sizeCharDT2);
-	dataTemp2 = (char*) calloc(tbHDataSize,sizeChar);
+	dataTemp2 = (char*) calloc(B,sizeChar);//dataTemp2 = (char*) calloc(tbHDataSize,sizeChar);
 	
 
 	for(int j=0;j<padroes.size();j++) {
@@ -616,16 +619,17 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 			std::string subStrPerm2 = strTemp2.substr(idxInicio2,B);
 
 			
-
+			int contdataTemp2 = 0;
 			for (int p = 0; p <subStrPerm2.size(); ++p) {
                 dataTemp2[p] = subStrPerm2[p];
-                //cout<<dataTemp2[p];
+				//cout<<dataTemp2[p];
+				contdataTemp2++;
 			}
 
 			
 
 			int hash2 = 0;
-            for (int i = 0; i < strlen(dataTemp); i++) {
+            for (int i = 0; i < contdataTemp2; i++) {//for (int i = 0; i < strlen(dataTemp); i++) {
                 hash2 = hash2 + dataTemp2[i] * (c ^ (i));
                 hash2 = hash2 % M;
 			}
@@ -640,12 +644,12 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 							
 
 							int posIn = 0;
-							int min = strlen(tbHData);
+							int min = conttbHData;//int min = strlen(tbHData);
 							
 							cout<<" strlen(tbHData): "<<min<<endl;
 							
                             posIn = min;
-                            int max = strTemp.size() + strlen(tbHData);
+                            int max = strTemp.size() + conttbHData;//int max = strTemp.size() + strlen(tbHData);
                             int idx = 0;
 							cout << "\n";
 
@@ -658,6 +662,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 									tbHData[d] = strTemp[idx];
 									idx = idx + 1;
 									cout << "[" << d << "]: " << tbHData[d] << '\n';
+									conttbHData = conttbHData + 1;
 								//}
 							}
 							//cout<<">>>>>hash"<<hash<<"\n";
@@ -684,10 +689,10 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                             countSizePadHash++;
 					}else{
 						int posIn = 0;
-                        int min = strlen(tbHData);
+                        int min = conttbHData;//int min = strlen(tbHData);
 
                         posIn = min;
-                        int max = strTemp2.size() + strlen(tbHData);
+                        int max = strTemp2.size() + conttbHData;//int max = strTemp2.size() + strlen(tbHData);
                         int idx = 0;
                         cout << "\n";
 						
@@ -698,6 +703,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 								tbHData[d] = strTemp2[idx];
 								idx = idx + 1;
 								cout << "[" << d << "]: " << tbHData[d] << '\n';
+								conttbHData = conttbHData + 1;
 							//}
                         }
 						//cout<<">>>>>hash"<<hash<<"\n";
@@ -749,8 +755,8 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 	
 	}
 	
-	//delete[] dataTemp2;
-	free(dataTemp2);
+	delete[] dataTemp2;
+	//free(dataTemp2);
 }
 
 bool WMGPUInspection::hashEsgotado(int hash){
@@ -766,12 +772,12 @@ bool WMGPUInspection::hashEsgotado(int hash){
 
 void WMGPUInspection::vecPermu1_1(){
 
-	char* dataTemp;
+	char* dataTemp= NULL;//char* dataTemp;
 	//int sizeCharDT = B * sizeof(char);
-	size_t sizeChar = tbHDataSize * sizeof(char);
+	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
 	//dataTemp = (char*) malloc(sizeCharDT);
 	//dataTemp = (char*) calloc(B,sizeCharDT);
-	dataTemp = (char*) calloc(tbHDataSize,sizeChar);
+	dataTemp = (char*)calloc(B, sizeChar);//dataTemp = (char*) calloc(tbHDataSize,sizeChar);
     //vecpermu = std::vector<std::vector<std::string>>(nP,std::vector<std::string>());
 
 	
@@ -793,16 +799,18 @@ void WMGPUInspection::vecPermu1_1(){
 			
 			subStrPerm = strTemp.substr(idxInicio,B);
 			//cout<<"subStrPerm: "<<subStrPerm<<std::endl;
+			int contDataTemp = 0;
 			for (int p = 0; p <subStrPerm.size(); ++p) {
 				//if(subStrPerm[p] != '\0'){
                 	dataTemp[p] = subStrPerm[p];
 					cout<<dataTemp[p];
+					contDataTemp++;
 				//}
 			}
 			std::cout <<"erro"<<std::endl;
 
 			int hash = 0;
-            for (int i = 0; i < strlen(dataTemp); i++) {
+            for (int i = 0; i < contDataTemp; i++) {//for (int i = 0; i < strlen(dataTemp); i++) {
                 hash = hash + dataTemp[i] * (c ^ (i));
                 hash = hash % M;
 			}

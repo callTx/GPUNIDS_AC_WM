@@ -396,7 +396,7 @@ int main(int argc, char *argv[])
 			
                 inspection->buildMatchingMachine1_1(params->rules, params->buffer, params->threads - 1);
 
-                 
+                 /*
                 LibPCAP pcap(&inspection[0], params->threads - 1, params->nPackets, params->timeout);
                  if(params->file != "")
                 {   
@@ -404,7 +404,7 @@ int main(int argc, char *argv[])
                 } else {
                 	pcap.onlineCapture(params->interface, params->filter);
                 }
-                
+                */
 
                 cout << "FIM Algoritmo WU-MANBER GPU1.1!\n"<< endl;
 

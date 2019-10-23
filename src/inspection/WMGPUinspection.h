@@ -48,6 +48,10 @@ class WMGPUInspection : public Inspection
 	std::vector<int> tbShift;	
 	std::vector<std::vector<std::string>> tabelaHASH_;
 
+	int tbHDataSize = 0;
+	int countSizePadHash = 0;
+	int conttbHData = 0;
+
 	char* tbHData;
 	int* tbHPosData;
 	int* tbHContPadHash;
