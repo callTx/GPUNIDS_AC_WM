@@ -64,9 +64,7 @@ class WMGPUInspection : public Inspection
 	int* d_tbHSizePadHash= NULL;
 	int* d_tbHIdxSizePadHash =NULL;
 
-	int countSizePadHash = 0;
-
-	int tbHDataSize = 0;
+	
 
 	int NUMBER_BLOCKS;
 	int THREADS_PER_BLOCk;
