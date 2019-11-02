@@ -715,9 +715,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 							//}
 						}
 						
-						if(indexDebug == 136600){
-							std::cout <<"else error "<<std::endl;
-						}
+						
 						//cout<<">>>>>hash"<<hash<<"\n";
 						//cout<<">>>>>crash2"<<"\n";
 
@@ -726,6 +724,9 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                             cout << "tbHPosData[" << hash << "]: " << tbHPosData[hash] << "  ";
                         }
 
+						if(indexDebug == 136600){
+							std::cout <<"else error "<<std::endl;
+						}
 
                         int cont = tbHContPadHash[hash];
                         tbHContPadHash[hash] = cont + 1;
@@ -743,7 +744,9 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                         //}
 
                         hashEsgotadoPadraoAtual = true;
-                        countSizePadHash++;
+						countSizePadHash++;
+						
+						
 					}
 				}
 			}
