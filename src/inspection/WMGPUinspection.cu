@@ -792,7 +792,9 @@ void WMGPUInspection::vecPermu1_1(){
 		
 		//cout<<"idxInicio: "<<idxInicio<<"\n";
 		//cout<<"idxFim: "<<idxFim<<"\n";
-
+		if(136600){
+			std::cout <<"error: "<<strTemp<<std::endl;
+		}
 		std::cout <<"padrao: "<<strTemp<<std::endl;
 		
         while(idxFim<strTemp.length()){
