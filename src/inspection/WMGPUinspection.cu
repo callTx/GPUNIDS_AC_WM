@@ -610,7 +610,10 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 		std::string strTemp2 = padroes[j];
 
 		
-
+		if(136600){
+			std::cout <<"error: "<<strTemp<<std::endl;
+		}
+		
 		int idxInicio2 = 0;
 		int idxFim2 = B - 1;
 
@@ -801,9 +804,7 @@ void WMGPUInspection::vecPermu1_1(){
 			//cout<<"subStrPerm: "<<subStrPerm<<std::endl;
 			int contDataTemp = 0;
 
-			if(136600){
-				std::cout <<"error: "<<strTemp<<std::endl;
-			}
+			
 			for (int p = 0; p <subStrPerm.size(); ++p) {
 				//if(subStrPerm[p] != '\0'){
                 	dataTemp[p] = subStrPerm[p];
