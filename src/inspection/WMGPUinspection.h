@@ -31,6 +31,7 @@ class WMGPUInspection : public Inspection
 	int M_ = 8; */
 
 	// bool nextInput =true;
+	int indexDebug;
 	bool nextInput =true;
     int maxs_;
 	// std::vector<std::string> strFile;

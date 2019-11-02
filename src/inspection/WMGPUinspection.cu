@@ -609,11 +609,8 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
         bool hashEsgotadoPadraoAtual = false;
 		std::string strTemp2 = padroes[j];
 
-		
-		if(136600){
-			std::cout <<"error: "<<strTemp<<std::endl;
-		}
-		
+	
+
 		int idxInicio2 = 0;
 		int idxFim2 = B - 1;
 
@@ -666,7 +663,13 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 									idx = idx + 1;
 									cout << "[" << d << "]: " << tbHData[d] << '\n';
 									conttbHData = conttbHData + 1;
+
+									indexDebug =d;
 								//}
+							}
+
+							if(indexDebug == 136600){
+								std::cout <<"error: "<<strTemp<<std::endl;
 							}
 							//cout<<">>>>>hash"<<hash<<"\n";
 							//cout<<">>>>>crash1"<<"\n";
@@ -707,8 +710,14 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 								idx = idx + 1;
 								cout << "[" << d << "]: " << tbHData[d] << '\n';
 								conttbHData = conttbHData + 1;
+
+								indexDebug =d;
 							//}
-                        }
+						}
+						
+						if(indexDebug == 136600){
+							std::cout <<"error: "<<strTemp<<std::endl;
+						}
 						//cout<<">>>>>hash"<<hash<<"\n";
 						//cout<<">>>>>crash2"<<"\n";
 
