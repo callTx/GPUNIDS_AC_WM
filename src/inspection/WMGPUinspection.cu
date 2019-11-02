@@ -597,7 +597,7 @@ void WMGPUInspection::tabelaIdxHash(){
 void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* dataTemp){
 	
 	
-	char* dataTemp2 = NULL;//char* dataTemp2;
+	char* dataTemp2;//char* dataTemp2;
 	//int sizeCharDT2 = B * sizeof(char);
 	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
 	//dataTemp2 = (char*) malloc(sizeCharDT2);
@@ -772,7 +772,7 @@ bool WMGPUInspection::hashEsgotado(int hash){
 
 void WMGPUInspection::vecPermu1_1(){
 
-	char* dataTemp= NULL;//char* dataTemp;
+	char* dataTemp;//char* dataTemp;
 	//int sizeCharDT = B * sizeof(char);
 	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
 	//dataTemp = (char*) malloc(sizeCharDT);
