@@ -724,14 +724,15 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                             cout << "tbHPosData[" << hash << "]: " << tbHPosData[hash] << "  ";
                         }
 
-						if(indexDebug == 136600){
-							std::cout <<"else error "<<std::endl;
-						}
+						
 
                         int cont = tbHContPadHash[hash];
                         tbHContPadHash[hash] = cont + 1;
                         cout << "tbHContPadHash[" << hash << "]: " << tbHContPadHash[hash] << "  ";
 
+						if(indexDebug == 136600){
+							std::cout <<"else error "<<std::endl;
+						}
 
                         tbHSizePadHash[countSizePadHash] = strTemp2.size();
                         cout << "tbHSizePadHash[" << countSizePadHash << "]: " << tbHSizePadHash[countSizePadHash]
