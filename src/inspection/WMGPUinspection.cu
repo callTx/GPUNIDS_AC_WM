@@ -669,7 +669,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 							}
 
 							if(indexDebug == 136600){
-								std::cout <<"error: "<<std::endl;
+								std::cout <<"error "<<std::endl;
 							}
 							//cout<<">>>>>hash"<<hash<<"\n";
 							//cout<<">>>>>crash1"<<"\n";
@@ -716,7 +716,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 						}
 						
 						if(indexDebug == 136600){
-							std::cout <<"error: "<<std::endl;
+							std::cout <<"else error "<<std::endl;
 						}
 						//cout<<">>>>>hash"<<hash<<"\n";
 						//cout<<">>>>>crash2"<<"\n";
