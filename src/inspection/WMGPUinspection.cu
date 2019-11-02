@@ -792,9 +792,7 @@ void WMGPUInspection::vecPermu1_1(){
 		
 		//cout<<"idxInicio: "<<idxInicio<<"\n";
 		//cout<<"idxFim: "<<idxFim<<"\n";
-		if(136600){
-			std::cout <<"error: "<<strTemp<<std::endl;
-		}
+		
 		std::cout <<"padrao: "<<strTemp<<std::endl;
 		
         while(idxFim<strTemp.length()){
@@ -802,6 +800,10 @@ void WMGPUInspection::vecPermu1_1(){
 			subStrPerm = strTemp.substr(idxInicio,B);
 			//cout<<"subStrPerm: "<<subStrPerm<<std::endl;
 			int contDataTemp = 0;
+
+			if(136600){
+				std::cout <<"error: "<<strTemp<<std::endl;
+			}
 			for (int p = 0; p <subStrPerm.size(); ++p) {
 				//if(subStrPerm[p] != '\0'){
                 	dataTemp[p] = subStrPerm[p];
