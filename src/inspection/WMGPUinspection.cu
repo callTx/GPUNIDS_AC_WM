@@ -840,8 +840,10 @@ void WMGPUInspection::vecPermu1_1(){
 	//std::cout <<"	padroes.size: "<<padroes.size()<<std::endl;
 	//std::cout <<"	tabelaHASH_.size: "<<tabelaHASH_.size()<<std::endl;
 
-	//delete[] dataTemp;
-	free(dataTemp);
+	delete[] dataTemp;
+	//free(dataTemp);
+
+	std::cout << "Fim inicializacao de tabelas" << std::endl;
 }
 
 void WMGPUInspection::vecPermu(){
