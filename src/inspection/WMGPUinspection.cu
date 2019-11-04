@@ -733,7 +733,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 						if(indexDebug == 136600){
 							std::cout <<"else error "<<std::endl;
 						}
-
+ 
                         tbHSizePadHash[countSizePadHash] = strTemp2.size();
                         cout << "tbHSizePadHash[" << countSizePadHash << "]: " << tbHSizePadHash[countSizePadHash]
                              << "  ";
