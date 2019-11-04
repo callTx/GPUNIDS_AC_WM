@@ -621,16 +621,20 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 			
 			std::string subStrPerm2 = strTemp2.substr(idxInicio2,B);
 
-			if(indexDebug == 136600){
-				std::cout <<"while error "<<std::endl;
-				std::cout <<"subStrPerm2:"<<subStrPerm2<<std::endl;
-			}
+			
 			
 			int contdataTemp2 = 0;
 			for (int p = 0; p <subStrPerm2.size(); ++p) {
                 dataTemp2[p] = subStrPerm2[p];
 				//cout<<dataTemp2[p];
 				contdataTemp2++;
+
+				if(indexDebug == 136600){
+					std::cout <<"while error "<<std::endl;
+					std::cout <<"subStrPerm2:"<<subStrPerm2<<std::endl;
+					std::cout <<"dataTemp2[p]:"<<dataTemp2[p]<<std::endl;
+					std::cout <<"contdataTemp2++:"<<contdataTemp2<<std::endl;
+				}
 			}
 
 			
