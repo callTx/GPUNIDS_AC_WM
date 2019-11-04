@@ -596,7 +596,9 @@ void WMGPUInspection::tabelaIdxHash(){
 
 void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* dataTemp){
 	
-	
+	if(indexDebug == 136600){
+		std::cout <<"PrecarregaTabelaHash error "<<std::endl;
+	}
 	char* dataTemp2;//char* dataTemp2;
 	//int sizeCharDT2 = B * sizeof(char);
 	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
@@ -692,7 +694,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 							if(indexDebug == 136600){
 								std::cout <<"error "<<std::endl;
 							}
-							
+
                             hashEsgotadoPadraoAtual = true;
                             countSizePadHash++;
 					}else{
