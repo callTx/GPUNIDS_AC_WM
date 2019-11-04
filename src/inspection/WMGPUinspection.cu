@@ -631,9 +631,9 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 
 				if(indexDebug == 136600){
 					std::cout <<"while error "<<std::endl;
-					std::cout <<"subStrPerm2:"<<subStrPerm2<<std::endl;
-					std::cout <<"dataTemp2[p]:"<<dataTemp2[p]<<std::endl;
-					std::cout <<"contdataTemp2++:"<<contdataTemp2<<std::endl;
+					std::cout <<"  subStrPerm2:"<<subStrPerm2<<std::endl;
+					std::cout <<"  dataTemp2["<<p<<"]:"<<dataTemp2[p]<<std::endl;
+					std::cout <<"  contdataTemp2++:"<<contdataTemp2<<std::endl;
 				}
 			}
 
@@ -641,8 +641,19 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 
 			int hash2 = 0;
             for (int i = 0; i < contdataTemp2; i++) {//for (int i = 0; i < strlen(dataTemp); i++) {
-                hash2 = hash2 + dataTemp2[i] * (c ^ (i));
-                hash2 = hash2 % M;
+				hash2 = hash2 + dataTemp2[i] * (c ^ (i));
+				if(indexDebug == 136600){
+					std::cout <<"for error "<<std::endl;
+					std::cout <<"  hash2:"<<hash2<<std::endl;
+					std::cout <<"  dataTemp2["<<i<<"]:"<<dataTemp2[i]<<std::endl;
+				
+				}
+				hash2 = hash2 % M;
+				if(indexDebug == 136600){
+					std::cout <<"  mod:"<<hash2<<std::endl;
+				
+				}
+				
 			}
 			
 			
