@@ -618,6 +618,9 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 
 		
 		while(idxFim2<strTemp2.length()) {
+			if(indexDebug == 136600){
+				std::cout <<"while error "<<std::endl;
+			}
 			std::string subStrPerm2 = strTemp2.substr(idxInicio2,B);
 
 			
@@ -756,9 +759,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 				}
 			}
 			
-			if(indexDebug == 136600){
-				std::cout <<"if hash hash2 error "<<std::endl;
-			}
+			
 
 			if (idxInicio2==idxFim2){
                 idxFim2 = idxFim2 + 1;
