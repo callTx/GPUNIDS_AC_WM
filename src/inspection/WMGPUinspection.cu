@@ -446,7 +446,7 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
 	//================fim aloca host tbHPosData/tbHContPadHash/tbHSizePadHash/tbHIdxSizePadHash/tbHData
 	
 	
-	//vecPermu1_1();
+	vecPermu1_1();
 	
 	size_t sizeChartb = tbHDataSize * sizeof(char);	
 	size_t sizeInttb = M * sizeof(int);
