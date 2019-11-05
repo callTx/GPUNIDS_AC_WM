@@ -420,7 +420,7 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
 		       
 	}
 
-	cout<<"tbHDataSize: "<<tbHDataSize<<"\n";
+	//cout<<"tbHDataSize: "<<tbHDataSize<<"\n";
 
 	arrHashEsgotados = std::vector<int> (tbHDataSize);
 	
@@ -809,7 +809,9 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
             arrHashEsgotados.push_back(hash);
         }
 
-	
+		if(indexDebug == 136600){
+			std::cout <<"arrHashEsgotados.push_back end error "<<std::endl;
+		}
 	}
 
 	if(indexDebug == 136600){
