@@ -779,9 +779,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 				}
 			}
 			
-			if(indexDebug == 136600){
-				std::cout <<"hash==hash2 end error "<<std::endl;
-			}
+			
 
 			if (idxInicio2==idxFim2){
                 idxFim2 = idxFim2 + 1;
@@ -791,19 +789,24 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                 idxFim2 = idxFim2 + 1;
 			}
 			
+
 			
-			if(indexDebug == 136600){
-				std::cout <<"idxInicio2==idxFim2 end error "<<std::endl;
-			}
 
 		}
 		
+		if(indexDebug == 136600){
+			std::cout <<"while end error "<<std::endl;
+		}
 
 		if(j == padroes.size()-1){
             arrHashEsgotados.push_back(hash);
         }
 
 	
+	}
+
+	if(indexDebug == 136600){
+		std::cout <<"for end error "<<std::endl;
 	}
 	
 	delete[] dataTemp2;
