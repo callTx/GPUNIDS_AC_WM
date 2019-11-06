@@ -612,7 +612,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 	for(int j=0; j < padroes_size ; j++) {
 
 		
-		if(indexDebug == 136600){
+		if(j > 3393){
 			std::cout <<"for index j: "<<j<<std::endl;
 		}
 		
