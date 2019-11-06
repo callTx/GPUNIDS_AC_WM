@@ -608,8 +608,8 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 	//dataTemp2 = (char*) calloc(B,sizeCharDT2);
 	dataTemp2 = (char*) calloc(B,sizeof(char));//dataTemp2 = (char*) calloc(tbHDataSize,sizeChar);
 	
-
-	for(int j=0;j<padroes.size();j++) {
+	int padroes_size = padroes.size();
+	for(int j=0; j < padroes_size ; j++) {
 
 		
 		if(indexDebug == 136600){
