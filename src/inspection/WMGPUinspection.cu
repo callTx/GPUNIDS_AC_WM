@@ -812,6 +812,11 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 		if(indexDebug == 136600){
 			std::cout <<"arrHashEsgotados.push_back end error "<<std::endl;
 		}
+
+		if(indexDebug == 136600){
+			std::cout <<"numero padroes: "<<padroes.size()<<std::endl;
+			std::cout <<"index j:"<<j<<std::endl;
+		}
 	}
 
 	if(indexDebug == 136600){
