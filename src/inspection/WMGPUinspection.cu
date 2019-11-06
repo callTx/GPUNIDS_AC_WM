@@ -611,9 +611,9 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 
 	for(int j=0;j<padroes.size();j++) {
 
-		if(j == 3394){
-			std::cout <<" for index j:"<<j<<std::endl;
-		}
+		
+		std::cout <<" for index j:"<<j<<std::endl;
+		
 
         bool hashEsgotadoPadraoAtual = false;
 		std::string strTemp2 = padroes[j];
