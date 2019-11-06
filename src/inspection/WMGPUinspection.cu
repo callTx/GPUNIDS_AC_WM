@@ -612,7 +612,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 	for(int j=0;j<padroes.size();j++) {
 
 		if(indexDebug == 136600){
-			std::cout <<"for error index j:"<<j<<std::endl;
+			std::cout <<" for index j:"<<j<<std::endl;
 		}
 
         bool hashEsgotadoPadraoAtual = false;
