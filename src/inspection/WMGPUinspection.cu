@@ -419,7 +419,7 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
 		tbHDataSize = tbHDataSize + padroes.at(i).size()*(padroes.at(i).size() - (B-1));
 		       
 	}
-
+	tbHDataSize = 500000;
 	//cout<<"tbHDataSize: "<<tbHDataSize<<"\n";
 
 	arrHashEsgotados = std::vector<int> (tbHDataSize);
