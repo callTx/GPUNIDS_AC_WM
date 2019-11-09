@@ -800,7 +800,9 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                 idxFim2 = idxFim2 + 1;
 			}
 			
-
+			if(indexDebug == 762443){
+				std::cout <<"idxInicio2==idxFim2 end error "<<std::endl;
+			}
 			
 
 		}
