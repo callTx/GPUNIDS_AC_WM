@@ -1729,5 +1729,3 @@ Ver|3D|
 version
 version
 Via|3A|
-wsh.exe
-XEXCH50
