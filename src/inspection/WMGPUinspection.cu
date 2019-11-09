@@ -826,7 +826,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 	}
 	
 	//delete[] dataTemp2;
-	free(dataTemp2);
+	//free(dataTemp2);
 }
 
 bool WMGPUInspection::hashEsgotado(int hash){
