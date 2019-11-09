@@ -629,7 +629,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 		
 		while(idxFim2<strTemp2.length()) {
 
-			if(idxFim2<strTemp2.length()){
+			if(indexDebug == 762443){
 				std::cout <<"while begin error "<<std::endl;
 			}
 			
