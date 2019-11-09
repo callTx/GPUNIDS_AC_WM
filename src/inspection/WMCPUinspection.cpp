@@ -10,6 +10,10 @@ WMCPUInspection::~WMCPUInspection(){
 
 }
 
+
+
+
+
 void WMCPUInspection::exec(std::shared_ptr<Packet> pkt){
     
 		#ifdef VERBOSE
@@ -109,6 +113,7 @@ void WMCPUInspection::exec(std::shared_ptr<Packet> pkt){
 	#endif
    	 
 }
+
 
 void WMCPUInspection::excWuManberCore(std::string  nextData){
 

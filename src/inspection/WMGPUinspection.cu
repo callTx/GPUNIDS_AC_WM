@@ -98,8 +98,6 @@ wmkernel(char *dataTemp,int *tbHContPadHash,int *tbHPosData,int *tbHSizePadHash,
 
 
 
-
-
 void WMGPUInspection::exec(std::shared_ptr<Packet> pkt){
     
 	#ifdef VERBOSE
@@ -126,7 +124,7 @@ void WMGPUInspection::exec(std::shared_ptr<Packet> pkt){
 
 			//========== aloca host, aloca device dataTemp ==========
 			char* dataTemp;
-			dataTemp = reinterpret_cast<char*>(pkt.get()->payload_);;
+			dataTemp = reinterpret_cast<char*>(pkt.get()->payload_);
 			
 			int N = strlen(dataTemp);
 			size_t sizeChar = N * sizeof(char);
@@ -530,7 +528,7 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
 	//==========fim copia host->device tbHPosData/tbHContPadHash/tbHSizePadHash/tbHIdxSizePadHash/tbHData====
 
 	*/
-	
+
 	#ifdef VERBOSE
 		/*tbHData = "\000";
 		
