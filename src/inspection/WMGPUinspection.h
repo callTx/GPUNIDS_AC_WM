@@ -76,6 +76,9 @@ class WMGPUInspection : public Inspection
 
 	std::vector<std::string> padroes;
 
+	char* dataTemp;
+	char* dataTemp2;
+
     public:
         WMGPUInspection();
 		WMGPUInspection(const Inspection &) = delete;

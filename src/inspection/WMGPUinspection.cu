@@ -601,7 +601,8 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 	if(indexDebug == 136600){
 		std::cout <<"PrecarregaTabelaHash error "<<std::endl;
 	}
-	char* dataTemp2;//char* dataTemp2;
+
+	//char* dataTemp2;//char* dataTemp2;
 	//int sizeCharDT2 = B * sizeof(char);
 	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
 	//dataTemp2 = (char*) malloc(sizeCharDT2);
@@ -842,7 +843,7 @@ bool WMGPUInspection::hashEsgotado(int hash){
 
 void WMGPUInspection::vecPermu1_1(){
 
-	char* dataTemp;//char* dataTemp;
+	//char* dataTemp;//char* dataTemp;
 	//int sizeCharDT = B * sizeof(char);
 	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
 	//dataTemp = (char*) malloc(sizeCharDT);
@@ -913,7 +914,8 @@ void WMGPUInspection::vecPermu1_1(){
 	//std::cout <<"	tabelaHASH_.size: "<<tabelaHASH_.size()<<std::endl;
 
 	//delete[] dataTemp;
-	//free(dataTemp);
+	free(dataTemp);
+	free(dataTemp2);
 
 	std::cout << "Fim inicializacao de tabelas" << std::endl;
 }
