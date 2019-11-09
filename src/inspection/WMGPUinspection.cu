@@ -598,7 +598,7 @@ void WMGPUInspection::tabelaIdxHash(){
 
 void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* dataTemp){
 	
-	if(indexDebug == 136600){
+	if(indexDebug == 762443){
 		std::cout <<"PrecarregaTabelaHash error "<<std::endl;
 	}
 
@@ -607,13 +607,13 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
 	//dataTemp2 = (char*) malloc(sizeCharDT2);
 	//dataTemp2 = (char*) calloc(B,sizeCharDT2);
-	dataTemp2 = (char*) calloc(B+1,sizeof(char));//dataTemp2 = (char*) calloc(tbHDataSize,sizeChar);
+	dataTemp2 = (char*) calloc(B,sizeof(char));//dataTemp2 = (char*) calloc(tbHDataSize,sizeChar);
 	
 	int padroes_size = padroes.size();
 	for(int j=0; j < padroes_size ; j++) {
 
 		
-		if(indexDebug == 136600){
+		if(indexDebug == 762443){
 			std::cout <<"for index j: "<<j<<std::endl;
 		}
 		
@@ -639,7 +639,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 				//cout<<dataTemp2[p];
 				contdataTemp2++;
 
-				if(indexDebug == 136600){
+				if(indexDebug == 762443){
 					std::cout <<"while error "<<std::endl;
 					std::cout <<"  subStrPerm2:"<<subStrPerm2<<std::endl;
 					std::cout <<"  dataTemp2["<<p<<"]:"<<dataTemp2[p]<<std::endl;
@@ -653,7 +653,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
             for (int i = 0; i < contdataTemp2; i++) {//for (int i = 0; i < strlen(dataTemp); i++) {
 				hash2 = hash2 + dataTemp2[i] * (c ^ (i));
 				
-				if(indexDebug == 136600){
+				if(indexDebug == 762443){
 					std::cout <<"for error "<<std::endl;
 					std::cout <<"  hash2:"<<hash2<<std::endl;
 					std::cout <<"  dataTemp2["<<i<<"]:"<<dataTemp2[i]<<std::endl;
@@ -662,7 +662,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 
 				hash2 = hash2 % M;
 
-				if(indexDebug == 136600){
+				if(indexDebug == 762443){
 					std::cout <<"  mod:"<<hash2<<std::endl;
 				
 				}
@@ -724,7 +724,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                             tbHIdxSizePadHash[hash] = countSizePadHash;
                             cout << "tbHIdxSizePadHash[" << hash << "]: " << tbHIdxSizePadHash[hash] << "\n";
 
-							if(indexDebug == 136600){
+							if(indexDebug == 762443){
 								std::cout <<"error "<<std::endl;
 							}
 
@@ -773,7 +773,8 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                         cout << "tbHSizePadHash[" << countSizePadHash << "]: " << tbHSizePadHash[countSizePadHash]
                              << "  ";
 
-						if(indexDebug == 136600){
+						
+						if(indexDebug == 762443){
 							std::cout <<"else error "<<std::endl;
 						}
                         //if(tbHIdxSizePadHash[hash] < 0) {
@@ -804,25 +805,25 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 
 		}
 		
-		if(indexDebug == 136600){
+		if(indexDebug == 762443){
 			std::cout <<"while end error "<<std::endl;
 		}
 
 		if(j == padroes.size()-1){
 			arrHashEsgotados.push_back(hash);
 			
-			if(indexDebug == 136600){
+			if(indexDebug == 762443){
 				std::cout <<"arrHashEsgotados.push_back end error "<<std::endl;
 			}
         }
 
-		if(indexDebug == 136600){
+		if(indexDebug == 762443){
 			std::cout <<"numero padroes: "<<padroes.size()<<std::endl;
 			std::cout <<"index j:"<<j<<std::endl;
 		}
 	}
 
-	if(indexDebug == 136600){
+	if(indexDebug == 762443){
 		std::cout <<"for end error "<<std::endl;
 	}
 	
@@ -848,7 +849,7 @@ void WMGPUInspection::vecPermu1_1(){
 	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
 	//dataTemp = (char*) malloc(sizeCharDT);
 	//dataTemp = (char*) calloc(B,sizeCharDT);
-	dataTemp = (char*)calloc(B+1, sizeof(char));//dataTemp = (char*) calloc(tbHDataSize,sizeChar);
+	dataTemp = (char*)calloc(B, sizeof(char));//dataTemp = (char*) calloc(tbHDataSize,sizeChar);
     //vecpermu = std::vector<std::vector<std::string>>(nP,std::vector<std::string>());
 
 	
