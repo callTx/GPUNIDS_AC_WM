@@ -913,7 +913,7 @@ void WMGPUInspection::vecPermu1_1(){
 	//std::cout <<"	tabelaHASH_.size: "<<tabelaHASH_.size()<<std::endl;
 
 	//delete[] dataTemp;
-	free(dataTemp);
+	//free(dataTemp);
 
 	std::cout << "Fim inicializacao de tabelas" << std::endl;
 }
