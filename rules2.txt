@@ -1364,3 +1364,952 @@ ZIPCHK
 <script
 <script
 <script
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 00|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 01|
+|00 02|
+|00 02|
+|00 04|
+|00 12|
+|00 18|
+|00 19|
+|00 1D|
+|00 98|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 00|
+|01 A1|
+|01 A1|
+|02 00|
+|02 82|
+|02 82|
+|02 82|
+|03 00|
+|03 00|
+|03 00|
+|03 01|
+|03 01|
+|04 00|
+|04 00|
+|04 00|
+|04 00|
+|04 00|
+|05 00|
+|05 00|
+|05 00|
+|05 00|
+|05 00|
+|05 00|
+|07 00|
+|07 00|
+|07 00|
+|07 00|
+|08 02|
+|0A|.pl
+|0D 0A|
+|0D 0A|
+|0D 0A|
+|0D 0A|
+|0D 0A|
+|0D 0A|
+|10 00|
+|10 05|
+|12 02|
+|16 03|
+|16 03|
+|16 03|
+|16 03|
+|16 03|
+|16 03|
+|16 03|
+|16 03|
+|16 03|
+|16 03|
+|16 03|
+|17 0D|
+|17 0D|
+|17 0D|
+|26|s={
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|30 82|
+|3A 20|
+|3A 20|
+|3A 20|
+|4C 4C|
+|54 20|
+|80 01|
+|80 02|
+|80 02|
+|81 80|
+|9E 98|
+|B4 B4|
+|DE 03|
+|FF D8|
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+|FF|SMB
+0wns j0
+220|20|
+4Dgifts
+Accept-
+Accept-
+Accept-
+Accept-
+Accept-
+Accept-
+Accept-
+Accept-
+Accept:
+action=
+android
+Android
+Android
+animate
+Ask|3D|
+bot_id=
+bot_id=
+caidao=
+chunked
+chunked
+chunked
+cmd.exe
+cmd=set
+cmd=set
+cmd=set
+cmd=set
+CONNECT
+Cookie:
+Cookie:
+cstype=
+Dalvik/
+Dalvik/
+Darwin/
+DELETE 
+die|7C|
+Digits=
+dns|7C|
+domain=
+EXAMINE
+FROM_TZ
+ftp.exe
+ftp|3A|
+ftp|7C|
+GOBBLES
+google.
+google.
+HEAD/./
+HostBD=
+hostid=
+HOSTSVC
+HOSTSVC
+l44adsl
+login=0
+login=0
+ls%20-l
+message
+message
+method=
+mozilla
+net.exe
+NTLMSSP
+NTLMSSP
+NTLMSSP
+NTLMSSP
+NTLMSSP
+NTLMSSP
+NTLMSSP
+NTLMSSP
+PARTIAL
+PARTIAL
+PAT|20|
+private
+private
+PRIVMSG
+PRIVMSG
+Receipt
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+Referer
+referer
+Referer
+Referer
+Referer
+Referer
+Referer
+rmgroup
+rotina=
+Samsung
+SEARCH 
+select 
+sendsys
+server=
+SIP/2.0
+SIP/2.0
+SIP/2.0
+SIP/2.0
+SIP/2.0
+SIP/2.0
+stream/
+syn|7C|
+TagId: 
+TagId: 
+TagId: 
+TagId: 
+TagId: 
+TagId: 
+TagId: 
+TagId: 
+TagId: 
+taskId=
+tftp://
+tftp://
+tftp://
+TO_CHAR
+udp|7C|
+update=
+uptime=
+Ver|3D|
+version
+version
+Via|3A|
+wsh.exe
+XEXCH50
+yep yep
+ height=
+ HTTP/1.
+ HTTP/1.
+_pdf.exe
+..|5C|..
+.ashx?t=
+.bat|22|
+.cmd|22|
+.doc.exe
+.forward
+.gif.exe
+.htgroup
+.html?0.
+.jpg.exe
+.pdf.exe
+.php?id=
+.php?id=
+.php?ip=
+.printer
+.www_acl
+]branco[
+*GOBBLE*
+*GOBBLE*
+*GOBBLE*
+/_admin/
+/*.shtml
+//u5.htm
+/~nobody
+/000.jpg
+/adcycle
+/add.php
+/admin_/
+/ads.cgi
+/AnForm2
+/ans.pl?
+/api.php
+/axs.cgi
+/b/shoe/
+/bsml.pl
+/builds/
+/catinfo
+/catinfo
+/cgimail
+/cgiproc
+/cgiwrap
+/Client/
+/cmd.php
+/DB4Web/
+/exe.exe
+/fom.cgi
+/ftp.pl?
+/glimpse
+/gt.jpg?
+/handler
+/handler
+/hsx.cgi
+/hsx.cgi
+/images/
+/images/
+/in.cgi?
+/in.cgi?
+/install
+/jquery/
+/ksa.txt
+/ld.aspx
+/log.nsf
+/mab.nsf
+/newdesk
+/newuser
+/php.cgi
+/php.exe
+/rwcgi60
+/shh//bi
+/shh//bi
+/srchadm
+/testcgi
+/tst.bat
+/UpgSvr/
+/util.pl
+/vip.jpg
+/wais.pl
+/WEB-INF
+/webgais
+/www-sql
+/wwwwais
+/zml.cgi
+/zml.cgi
+&bgload=
+&idTime=
+&kernel=
+&kernel=
+&kernel=
+&kernel=
+&langid=
+&macMac=
+&medium=
+&method=
+&offers=
+&origin=
+&os_add=
+&osprod=
+&ostype=
+&pcname=
+&pcname=
+&PLUGIN=
+&serial=
+&server=
+&spfail=
+&string=
+&system=
+&uplink=
+&VERSAO=
+%252ejsp
+%7cadmin
+%PROMPT%
+%PUBLIC%
+%WINDIR%
+|00 01|/
+|00 01|C
+|00|.jsp
+|05 00|>
+|23|list
+|29|.png
+|FF|SMB%
+|FF|SMB%
+|FF|SMB%
+|FF|SMB%
+|FF|SMB2
+|FF|SMB2
+|FF|SMB2
+|FF|SMB2
+|FF|SMB2
+|FF|SMB2
+|FF|SMB2
+|FF|SMB2
+|FF|SMB2
+|FF|SMBs
+|FF|SMBs
+|FF|SMBs
+|FF|SMBs
+|FF|SMBs
+|FF|SMBs
+|FF|SMBs
+|FF|SMBu
+60gpBAK=
+account=
+acs=anon
+activate
+ADMROCKS
+Argument
+AUTHINFO
+B|00 02|
+backdoor
+c|3A 5C|
+C|3A 5C|
+calendar
+cfg=/../
+cord.php
+cybercop
+data.php
+data|7C|
+DATABASE
+DESCRIBE
+echo.txt
+exec|7C|
+file=../
+file=../
+Firefox/
+From|3A|
+From|3A|
+FROM|3A|
+full|7C|
+GNUTELLA
+gvt1.com
+Hello...
+HOST|3A|
+host|3A|
+http|7C|
+icmp|7C|
+ideaDir=
+IDENTIFY
+INTERVAL
+IPC$|00|
+ISSPNGRQ
+LangFile
+Location
+location
+logfile=
+macName=
+mailbox=
+mashine=
+MERA RTU
+name=../
+NAMENAME
+newgroup
+next=../
+nickserv
+nintendo
+OutOfBox
+p=../../
+page=../
+page=../
+peer_id=
+pingAddr
+plug=NAO
+pm_path=
+PRIVMSG 
+PRIVMSG 
+PRIVMSG 
+propfind
+rcmd.exe
+Referer:
+Referer:
+Referer:
+Referer:
+Referer:
+Referer:
+Referer:
+Referer:
+Referer:
+Referer:
+Referer:
+Referer:
+reportId
+root|00|
+rvgvtfdf
+setauth=
+Shipping
+site.avi
+stop|7C|
+styleid=
+takethis
+tftp.exe
+UA-CPU: 
+UA-CPU: 
+version=
+WHATISIT
+windows=
+WinGate>
+WSMadmin
+Z|17 0D|
+Z|17 0D|
+Z|17 0D|
+ /HTTP/1.
+ archive=
+ HTTP/1.1
+ HTTP/1.1
+ like '%'
+__cfduid=
+_conf.php
+-2013.exe
+?message=
+?STRENGUR
+.htaccess
+.htpasswd
+.jpeg.exe
+.php?mac=
+.zollard/
+) Chrome/
+) Chrome/
+/_vti_rpc
+/?ptrxcz_
+/.history
+/2ldr.php
+/a1stats/
+/admin.pl
+/aglimpse
+/album.pl
+/alya.cgi
+/announce
+/AnyForm2
+/args.bat
+/args.cmd
+/bdir.htr
+/book.cgi
+/book.cgi
+/calendar
+/cart.cgi
+/cgi-bin/
+/cgi-dos/
+/chip.ini
+/consulta
+/cos3q/in
+/ctss.idc
+/cybercop
+/diff.php
+/dmp/api/
+/echo.bat
+/echo.bat
+/eshop.pl
+/etc/motd
+/file.htm
+/filemail
+/files.pl
+/flexform
+/form.php
+/formmail
+/gate.php
+/gate.php
+/gate.php
+/gate.php
+/gate.php
+/gate.php
+/home.htm
+/home/ftp
+/home/www
+/htsearch
+/iisadmin
+/imagens/
+/info.xml
+/info2www
+/init.emu
+/isqlplus
+/isqlplus
+/jsp/snp/
+/log.php?
+/lyris.pl
+/mail.box
+/mailman/
+/mailman/
+/main.htm
+/main.php
+/mrtg.cgi
+/news.php
+/ows-bin/
+/ows-bin/
+/page.php
+/pals-cgi
+/pals-cgi
+/perl.exe
+/ping.asp
+/plugins/
+/plusmail
+/preview/
+/printenv
+/psdoccgi
+/redirect
+/root.exe
+/servlet/
+/shop.cgi
+/story.pl
+/story.pl
+/test-cgi
+/test.bat
+/test.cgi
+/test.php
+/tmps.exe
+/w3-msql/
+/webcart/
+/wp-admin
+/wp-json/
+/wp-json/
+/wp-json/
+/wroot/v3
+/xgi-bin/
+&app_key=
+&assunto=
+&browser=
+&cgminer=
+&comment=
+&context=
+&isadmin=
+&macaddr=
+&notsent=
+&os_name=
+&osbuild=
+&pixGuid=
+&proj_id=
+&version=
+&version=
+&windows=
+%74%6d%70
+%APPDATA%
+%COMSPEC%
+%PATHEXT%
+</iframe>
+>=|5C|xa2
+|0A|     
+|28|user=
+|A4 22|/>
+1j|D0 D9|
+3t2t3rgeg
+550 5.7.1
+Acunetix-
+Acunetix-
+admin.dll
+all_views
+bb.php?v=
+build.tgz
+cmd32.exe
+connected
+conteudo=
+describe 
+dir=../..
+fg2eq34df
+filename=
+filename=
+filename=
+filename=
+filename=
+filename=
+GET /3001
+getclient
+GODZILLA=
+GODZILLA=
+gorumDir=
+Group|3D|
+gstsearch
+HELLO|0A|
+Host|3A| 
+index.php
+Installed
+isAdmin=1
+isAdmin=1
+isAdmin=1
+isAdmin=1
+Linux|20|
+logged in
+login|3A|
+M-SEARCH 
+name=Wiki
+Negotiate
+NetSphere
+newserver
+NOTIFY * 
+p0=../../
+password=
+pdf_efax_
+PE|00 00|
+PE|00 00|
+PE|00 00|
+PE|00 00|
+pingAddr=
+pingAddr=
+pingAddr=
+prototype
+prototype
+query=%00
+range|7C|
+READD|0A|
+READY|0A|
+reportId=
+reportId=
+REVLOG / 
+SITE SETC
+sleep|7C|
+start.php
+statement
+SUBSCRIBE
+SUBSCRIBE
+template=
+template=
+template=
+TIME_ZONE
+topic_id=
+USERHOST 
+Username:
+voicemail
+wok5VLG.6
+Wtzup Use
+-froot|00|
+-froot|00|
+[ICQ User]
+/_mem_bin/
+/_vti_bin/
+/.DS_Store
+/.FBCIndex
+/.nsconfig
+/admin.php
+/admin.php
+/admin.php
+/admin.php
+/alert.cgi
+/apexec.pl
+/bb-rep.sh
+/booth.php
+/carbo.dll
+/catgy.cgi
+/code.php3
+/count.cgi
+/counter/?
+/dfire.cgi
+/dm/demarc
+/doc/admin
+/eshop.pl?
+/ezman.cgi
+/faxsurvey
+/flupdate/
+/form2.php
+/forum.php
+/gate.php?
+/gbook.cgi
+/genst.htm
+/get/?ver=
+/get32.exe
+/GWWEB.EXE
+/hello.bat
+/hello.bat
+/index.asp
+/index.htm
+/index.php
+/index.php
+/index.php
+/index.php
+/info.php?
+/input.bat
+/intranet/
+/jlnp.html
+/jorg.html
+/jovf.html
+/JP-ja/js?
+/login.htm
+/login.htm
+/login.php
+/login.php
+/login.uix
+/login.uix
+/mailit.pl
+/names.nsf
+/ndcgi.exe
+/nphpd.php
+/order.php
+/perl.exe?
+/popup.php
+/post.php?
+/post/echo
+/read.php3
+/resetpass
+/robot.txt
+/rpm_query
+/scripts/ 
+/search?q=
+/search.pl
+/setup.htm
+/setup.nsf
+/Setup.php
+/snork.bat
+/start.htm
+/store.cgi
+/store.cgi
+/STTip.asp
+/swsrv.cgi
+/tasks.php
+/Title.php
+/tongji.js
+/TOP10.dll
+/trace.axd
+/upload.pl
+/users.pwd
+/users.xml
+/way-board
+/webdriver
+/wp-admin/
+/wp-admin/
+&authname=
+&authpass=
+&bolausado
+&combo_id=
+&downlink=
+&features=
+&hostname=
+&idcliente
+&mensagem=
+&mode=text
+&offer_id=
+&os_build=
+&password=
+&password=
+&password=
+&password=
+&previous=
+&sitename=
+&username=
+&username=
+&username=
+&webnavig=
+%dep_host%
+%ebaylive%
+%HOMEPATH%
+%USERDATA%
+%USERNAME%
