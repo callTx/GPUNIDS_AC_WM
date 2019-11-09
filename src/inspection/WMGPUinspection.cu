@@ -419,8 +419,8 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
 		tbHDataSize = tbHDataSize + padroes.at(i).size()*(padroes.at(i).size() - (B-1));
 		       
 	}
-	tbHDataSize = 1000000;
-	//cout<<"tbHDataSize: "<<tbHDataSize<<"\n";
+	//tbHDataSize = 1000000;
+	cout<<"tbHDataSize: "<<tbHDataSize<<"\n";
 
 	arrHashEsgotados = std::vector<int> (tbHDataSize);
 	
@@ -446,7 +446,7 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
 	//================fim aloca host tbHPosData/tbHContPadHash/tbHSizePadHash/tbHIdxSizePadHash/tbHData
 	
 	
-	vecPermu1_1();
+	//vecPermu1_1();
 	
 	size_t sizeChartb = tbHDataSize * sizeof(char);	
 	size_t sizeInttb = M * sizeof(int);
