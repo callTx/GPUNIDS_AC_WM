@@ -448,6 +448,7 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
 	
 	vecPermu1_1();
 	
+	/*
 	size_t sizeChartb = tbHDataSize * sizeof(char);	
 	size_t sizeInttb = M * sizeof(int);
 	
@@ -528,6 +529,8 @@ int WMGPUInspection::buildMatchingMachine1_1(std::string rules,int bufferSize, i
     }
 	//==========fim copia host->device tbHPosData/tbHContPadHash/tbHSizePadHash/tbHIdxSizePadHash/tbHData====
 
+	*/
+	
 	#ifdef VERBOSE
 		/*tbHData = "\000";
 		
