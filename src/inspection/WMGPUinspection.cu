@@ -629,7 +629,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 		
 		while(idxFim2<strTemp2.length()) {
 
-			if(indexDebug == 762443){
+			if(indexDebug == 753488){
 				std::cout <<"while begin error "<<std::endl;
 			}
 			
@@ -643,7 +643,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 				//cout<<dataTemp2[p];
 				contdataTemp2++;
 
-				if(indexDebug == 762443){
+				if(indexDebug == 753488){
 					std::cout <<"while error "<<std::endl;
 					std::cout <<"  subStrPerm2:"<<subStrPerm2<<std::endl;
 					std::cout <<"  dataTemp2["<<p<<"]:"<<dataTemp2[p]<<std::endl;
@@ -657,7 +657,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
             for (int i = 0; i < contdataTemp2; i++) {//for (int i = 0; i < strlen(dataTemp); i++) {
 				hash2 = hash2 + dataTemp2[i] * (c ^ (i));
 				
-				if(indexDebug == 762443){
+				if(indexDebug == 753488){
 					std::cout <<"for error "<<std::endl;
 					std::cout <<"  hash2:"<<hash2<<std::endl;
 					std::cout <<"  dataTemp2["<<i<<"]:"<<dataTemp2[i]<<std::endl;
@@ -666,7 +666,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 
 				hash2 = hash2 % M;
 
-				if(indexDebug == 762443){
+				if(indexDebug == 753488){
 					std::cout <<"  mod:"<<hash2<<std::endl;
 				
 				}
@@ -728,7 +728,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                             tbHIdxSizePadHash[hash] = countSizePadHash;
                             cout << "tbHIdxSizePadHash[" << hash << "]: " << tbHIdxSizePadHash[hash] << "\n";
 
-							if(indexDebug == 762443){
+							if(indexDebug == 753488){
 								std::cout <<"error "<<std::endl;
 							}
 
@@ -778,7 +778,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                              << "  ";
 
 						
-						if(indexDebug == 762443){
+						if(indexDebug == 753488){
 							std::cout <<"else error "<<std::endl;
 						}
                         //if(tbHIdxSizePadHash[hash] < 0) {
@@ -804,7 +804,7 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
                 idxFim2 = idxFim2 + 1;
 			}
 			
-			if(indexDebug == 762443){
+			if(indexDebug == 753488){
 				std::cout <<"idxInicio2==idxFim2 end error "<<std::endl;
 				
 				std::cout <<idxFim2<<"<" << strTemp2.length() <<std::endl;
@@ -813,25 +813,25 @@ void WMGPUInspection::PrecarregaTabelaHash(std::string strTemp, int hash,char* d
 
 		}
 		
-		if(indexDebug == 762443){
+		if(indexDebug == 753488){
 			std::cout <<"while end error "<<std::endl;
 		}
 
 		if(j == padroes.size()-1){
 			arrHashEsgotados.push_back(hash);
 			
-			if(indexDebug == 762443){
+			if(indexDebug == 753488){
 				std::cout <<"arrHashEsgotados.push_back end error "<<std::endl;
 			}
         }
 
-		if(indexDebug == 762443){
+		if(indexDebug == 753488){
 			std::cout <<"numero padroes: "<<padroes.size()<<std::endl;
 			std::cout <<"index j:"<<j<<std::endl;
 		}
 	}
 
-	if(indexDebug == 762443){
+	if(indexDebug == 753488){
 		std::cout <<"for end error "<<std::endl;
 	}
 	
