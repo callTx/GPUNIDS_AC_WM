@@ -16,8 +16,8 @@ WMCPUInspection::~WMCPUInspection(){
 
 void WMCPUInspection::exec(std::shared_ptr<Packet> pkt){
 
-	    std::cout<<"Inicio exec" <<std::endl;
-		
+	    //std::cout<<"Inicio exec" <<std::endl;
+
 		#ifdef VERBOSE
 				struct timeval start, end, diff;
 				gettimeofday(&end, nullptr);
