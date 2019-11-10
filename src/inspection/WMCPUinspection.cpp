@@ -15,7 +15,7 @@ WMCPUInspection::~WMCPUInspection(){
 
 
 void WMCPUInspection::exec(std::shared_ptr<Packet> pkt){
-    
+	    std::cout<<"Inicio exec" <<std::endl;
 		#ifdef VERBOSE
 				struct timeval start, end, diff;
 				gettimeofday(&end, nullptr);
@@ -116,7 +116,7 @@ void WMCPUInspection::exec(std::shared_ptr<Packet> pkt){
 
 
 void WMCPUInspection::excWuManberCore(std::string  nextData){
-
+			std::cout<<"Inicio excWuManberCore" <<std::endl;
         	std::vector<std::vector<std::string>> tabelaHASH = std::vector<std::vector<std::string>> (tbShift.size(),std::vector<std::string>());
 			#ifdef VERBOSE
 				//cout<< ">>>>>>>>>>>tabelaHASH: "<<tabelaHASH.size() <<endl;	
@@ -219,7 +219,7 @@ void WMCPUInspection::excWuManberCore(std::string  nextData){
 }
 
 void WMCPUInspection::excWuManberCore1_1(std::string  nextData){
-
+			std::cout<<"Inicio excWuManberCore1_1" <<std::endl;
         	//std::vector<std::vector<std::string>> tabelaHASH = std::vector<std::vector<std::string>> (tbShift.size(),std::vector<std::string>());
 			#ifdef VERBOSE
 				//cout<< ">>>>>>>>>>>WuManberCore1_1: " <<endl;	
