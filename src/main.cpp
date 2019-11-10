@@ -315,7 +315,7 @@ int main(int argc, char *argv[])
 		
                 inspection->buildMatchingMachine1_1( params->rules);
 
-                
+                /*
                 LibPCAP pcap(&inspection[0], params->threads - 1, params->nPackets, params->timeout);
             
                 if(params->file != "")
@@ -324,7 +324,7 @@ int main(int argc, char *argv[])
                 } else {
                 	pcap.onlineCapture(params->interface, params->filter);
                 }
-		        
+		        /*
 
 		        cout << "Fim Algoritmo WU-MANBER CPU 1.1!\n" << endl;
                 /*
