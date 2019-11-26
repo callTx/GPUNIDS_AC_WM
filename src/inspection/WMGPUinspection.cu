@@ -45,9 +45,6 @@ wmkernel(char *dataTemp,int *tbHContPadHash,int *tbHPosData,int *tbHSizePadHash,
 
 	int index = blockDim.x * blockIdx.x + threadIdx.x;
 	
-		
-	
-	
 	if(index < N-B+1){
 		//posicao[index] = index;
 		
@@ -185,7 +182,7 @@ void WMGPUInspection::exec(std::shared_ptr<Packet> pkt){
 				X_ = N/THREADS_PER_BLOCk;
 				Y_ = THREADS_PER_BLOCk;
 			}else{
-				cout<<"N/ THREADS_PER_BLOCk: "<<N/ THREADS_PER_BLOCk<<" noa e multiplo";
+				cout<<"N/ THREADS_PER_BLOCk: "<<N/ THREADS_PER_BLOCk<<" nao e multiplo";
 				X_ =(NUMBER_BLOCKS + THREADS_PER_BLOCk -1)/THREADS_PER_BLOCk;
 				Y_ = THREADS_PER_BLOCk;
 			}

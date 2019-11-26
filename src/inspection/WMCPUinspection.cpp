@@ -10,10 +10,107 @@ WMCPUInspection::~WMCPUInspection(){
 
 }
 
+void WMCPUInspection::exec(std::shared_ptr<Packet> pkt){
+		#ifdef VERBOSE
+				struct timeval start, end, diff;
+				gettimeofday(&end, nullptr);
+				timersub(&end, &(pkt.get()->virtualTime), &diff);
+				this->lock();
+				pkt->computeStatistics(this->getStats());
+				this->getStats()->sumWaitingTime += diff.tv_sec * 1000.0 + diff.tv_usec / 1000.0;
+				this->unlock();
+
+				if( gettimeofday(&start, nullptr) != 0)
+				{
+					std::cerr << "Fail to get current time" << std::endl;
+					exit(-1);
+				}
+		#endif
+
+		pkt.get()->init();
+		if(nextInput && pkt.get()->size_payload_ > 0){
+				//nextInput = false;
+				#ifdef VERBOSE
+						//std::cout<<">>>>>>>>>>>>>>>>payload_[ ]: " <<reinterpret_cast<char*>( pkt.get()->payload_) <<std::endl;
+						//std::cout<< "size: " << pkt.get()->size_payload_ <<std::endl;
+				#endif
+				//this->excWuManberCore1_1( reinterpret_cast<char*>(pkt.get()->payload_) );
+				std::string dataTemp = reinterpret_cast<char*>(pkt.get()->payload_);
+					
+				int N = dataTemp.length();
+
+        		int pos = 0;
+    		
+
+        		//int pref = m - B2;
+				
+				while (pos <= N - B) {
+					//posicao[index] = index;
+
+					int hash = 0;
+					for (int i = pos; i < pos+B; i++) {
+						hash = hash + dataTemp[i] * (c ^ (i - pos));
+						hash = hash % M;
+					}
+					//posicao[index] = hash;
+
+					int tamArrPadrao = 0;
+					for (unsigned t = 0; t < tbHContPadHash[hash]; t++) {
+						int match = 1;
+
+						int posIniPadrao = tbHPosData[hash] - 1;
+						tamArrPadrao = tamArrPadrao + tbHSizePadHash[tbHIdxSizePadHash[hash] + t];
+						int tamPadrao = tbHSizePadHash[tbHIdxSizePadHash[hash] + t];
+						int _final = (pos + B) - 1;
+						int _final2 = tamPadrao;
+						for (int ch = tamArrPadrao; ch >= 0; --ch) {
+							if (_final2 - 1 >= 0) {
+
+								if (tbHData[posIniPadrao + ch - 1] == dataTemp[_final]) {
+									_final = _final - 1;
+									_final2 = _final2 - 1;
+
+								}
+								else {
+									match = 0;
+									break;
+								}
+							}
+							else {
+
+								break;
+							}
+						}
+						if (match) {
+							//posicao[index] = _final + 1;
+							cout << "Ha um match a partir da posicao " << _final + 1 << " do  pacote capturado" << endl;
+
+
+						}
+					}
+
+					pos = pos + 1;
+				}
+		}
 
 
 
 
+		#ifdef VERBOSE
+    
+    		if( gettimeofday(&end, nullptr) != 0)
+    		{
+        		std::cerr << "Fail to get current time" << std::endl;
+        		exit(-1);
+    		}
+    		timersub(&end, &start, &diff);
+    		this->lock();
+    		this->getStats()->sumProcTime += diff.tv_sec * 1000.0 + diff.tv_usec / 1000.0;
+    		this->unlock();
+		#endif
+}
+
+/*
 void WMCPUInspection::exec(std::shared_ptr<Packet> pkt){
 
 	    //std::cout<<"Inicio exec" <<std::endl;
@@ -115,7 +212,7 @@ void WMCPUInspection::exec(std::shared_ptr<Packet> pkt){
 	#endif
    	 
 }
-
+*/
 
 void WMCPUInspection::excWuManberCore(std::string  nextData){
 
@@ -516,6 +613,107 @@ int WMCPUInspection::buildMatchingMachine1_1(std::string rules){
 
 }
 
+int WMGPUInspection::buildMatchingMachine1_1_1(std::string rules){
+	THREADS_PER_BLOCk = nThreads;
+	
+	std::string line;
+	ifstream file(rules.c_str(), std::ifstream::in);
+	maxs_ = 0;
+	
+
+	while(getline(file,line))
+	{
+		padroes.push_back(line);
+		
+		maxs_ += line.size();
+	}
+
+	
+
+	m = TmhMenorPadrao();
+	
+	nP = padroes.size();
+
+	cout<<"nP: "<<nP<<"\n";
+
+
+	M = TmhTodosPadroes();
+
+	B = BlcStr(); 
+
+
+	B2 = B;
+
+	tbHDataSize = 0;
+	cout<<"B: "<<B<<"\n";
+	
+	for (int i =0;i< nP;i++) {
+		
+		tbHDataSize = tbHDataSize + padroes.at(i).size()*(padroes.at(i).size() - (B-1));
+		       
+	}
+	//tbHDataSize = 4000000;
+	//cout<<"tbHDataSize: "<<tbHDataSize<<"\n";
+
+	arrHashEsgotados = std::vector<int> (tbHDataSize);
+	
+	
+
+	#ifdef VERBOSE
+		cout<< "Inicializando tabelas........................... " <<endl;	
+	#endif
+
+
+	size_t sizeChar = tbHDataSize * sizeof(char);	
+	size_t sizeInt = M * sizeof(int);
+	
+	
+	//================aloca host tbHPosData/tbHContPadHash/tbHSizePadHash/tbHIdxSizePadHash/tbHData
+    tbHPosData = (int*) malloc(sizeInt);
+	//tbHContPadHash = (int*) malloc(sizeInt);
+	tbHContPadHash = (int*) calloc(M,sizeInt);
+    tbHSizePadHash = (int*) malloc(sizeInt);
+    tbHIdxSizePadHash = (int*) malloc(sizeInt);
+	//tbHData = (char*) malloc(sizeChar);
+	tbHData = (char*)calloc(tbHDataSize, sizeof(char));//tbHData = (char*) calloc(tbHDataSize,sizeChar);
+	//================fim aloca host tbHPosData/tbHContPadHash/tbHSizePadHash/tbHIdxSizePadHash/tbHData
+	
+	
+	vecPermu1_1_1();
+	
+	
+
+	#ifdef VERBOSE
+		/*tbHData = "\000";
+		
+		cout<<"strlen(tbHData): "<<strlen(tbHData)<<"\n";
+		for (int i =0;i< strlen(tbHData) ;i++) {
+			cout<<"tbHData["<<i<<"]"<< tbHData[i]<<"\n";
+		}
+		*/
+		/*cout<<">>>>>>>padroes: "<<endl;
+		for(int i=0 ; i<padroes.size() ; i++){
+
+			cout<<">>>>>>>>>>>>>>>" <<padroes[i]<<endl;
+		}*/
+		//cout<<">>>>>>>>>>> m: "<< m <<endl; 
+		//cout<<">>>>>>>>>>> nP: "<< nP <<endl; 
+		//cout<<">>>>>>>>>>> M: "<< M <<endl; 
+		//cout<<">>>>>>>>>>> B: "<< B <<endl; 
+		//tabelaIdxHash();
+		//cout<< "crash malloc"<<"\n";
+		//cout<< "crash vecPermu"<<"\n";
+		//TabelaHash();	
+		//cout<< ">>>>>>>>>>>tabelaidx.size(): "<<tabelaidx.size() <<endl;	
+		//tabelaShift();
+		//cout<< ">>>>>>>>>>>tabelaSHIFT: "<<tbShift.size() <<endl;	
+		cout<< "Tabelas inicializadas........................... " <<endl;	
+	#endif
+	 
+	return 1;
+
+}
+
 int WMCPUInspection::buildMatchingMachine(std::string rules){
     
     	std::string line;
@@ -808,6 +1006,327 @@ void WMCPUInspection::vecPermu1_1(){
 	//std::cout <<"	tabelaHASH_.size: "<<tabelaHASH_.size()<<std::endl;
 }
 
+void WMGPUInspection::PrecarregaTabelaHash1_1_1(std::string strTemp, int hash,char* dataTemp){
+	
+	if(indexDebug == 762443){
+		std::cout <<"PrecarregaTabelaHash error "<<std::endl;
+	}
+
+	//char* dataTemp2;//char* dataTemp2;
+	//int sizeCharDT2 = B * sizeof(char);
+	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
+	//dataTemp2 = (char*) malloc(sizeCharDT2);
+	//dataTemp2 = (char*) calloc(B,sizeCharDT2);
+	dataTemp2 = (char*) calloc(B,sizeof(char));//dataTemp2 = (char*) calloc(tbHDataSize,sizeChar);
+	
+	int padroes_size = padroes.size();
+	for(int j=0; j < padroes_size ; j++) {
+
+		
+		if(indexDebug == 762443){
+			std::cout <<"for index j: "<<j<<std::endl;
+		}
+		
+
+        bool hashEsgotadoPadraoAtual = false;
+		std::string strTemp2 = padroes[j];
+
+		
+
+		int idxInicio2 = 0;
+		int idxFim2 = B - 1;
+
+		
+		while(idxFim2<strTemp2.length()) {
+
+			if(indexDebug == 753488){
+				std::cout <<"while begin error "<<std::endl;
+			}
+			
+			std::string subStrPerm2 = strTemp2.substr(idxInicio2,B);
+
+			
+			
+			int contdataTemp2 = 0;
+			for (int p = 0; p <subStrPerm2.size(); ++p) {
+                dataTemp2[p] = subStrPerm2[p];
+				//cout<<dataTemp2[p];
+				contdataTemp2++;
+
+				if(indexDebug == 753488){
+					std::cout <<"while error "<<std::endl;
+					std::cout <<"  subStrPerm2:"<<subStrPerm2<<std::endl;
+					std::cout <<"  dataTemp2["<<p<<"]:"<<dataTemp2[p]<<std::endl;
+					std::cout <<"  contdataTemp2++:"<<contdataTemp2<<std::endl;
+				}
+			}
+
+			
+
+			int hash2 = 0;
+            for (int i = 0; i < contdataTemp2; i++) {//for (int i = 0; i < strlen(dataTemp); i++) {
+				hash2 = hash2 + dataTemp2[i] * (c ^ (i));
+				
+				if(indexDebug == 753488){
+					std::cout <<"for error "<<std::endl;
+					std::cout <<"  hash2:"<<hash2<<std::endl;
+					std::cout <<"  dataTemp2["<<i<<"]:"<<dataTemp2[i]<<std::endl;
+				
+				}
+
+				hash2 = hash2 % M;
+
+				if(indexDebug == 753488){
+					std::cout <<"  mod:"<<hash2<<std::endl;
+				
+				}
+				
+			}
+			
+			
+
+			if(hash == hash2   ) {//if(hash == hash2 && !(hashEsgotado(hash))  ) {
+
+                if(!hashEsgotadoPadraoAtual) {
+                    if (!strTemp.compare(strTemp2)) {
+
+							
+
+							int posIn = 0;
+							int min = conttbHData;//int min = strlen(tbHData);
+							
+							cout<<" strlen(tbHData): "<<min<<endl;
+							
+                            posIn = min;
+                            int max = strTemp.size() + conttbHData;//int max = strTemp.size() + strlen(tbHData);
+                            int idx = 0;
+							cout << "\n";
+
+							
+							
+							//cout<<"min: "<<min<<"\n";
+							//cout<<"max: "<<max<<"\n";
+							for (int d = min; d < max; d++) {
+								//if( strTemp[idx] != '\0'){
+									tbHData[d] = strTemp[idx];
+									idx = idx + 1;
+									cout << "[" << d << "]: " << tbHData[d] << '\n';
+									conttbHData = conttbHData + 1;
+
+									indexDebug =d;
+								//}
+							}
+
+							
+							//cout<<">>>>>hash"<<hash<<"\n";
+							//cout<<">>>>>crash1"<<"\n";
+
+							if (tbHContPadHash[hash] == 0) {//if (tbHPosData[hash] <= 0) { //exe:  -3453456 (lixo de memoria)
+                                tbHPosData[hash] = posIn + 1;
+                                cout << "tbHPosData[" << hash << "]: " << tbHPosData[hash] << "  ";
+							}
+							
+							int cont = tbHContPadHash[hash];
+                            tbHContPadHash[hash] = cont + 1;
+							cout << "tbHContPadHash[" << hash << "]: " << tbHContPadHash[hash] << "  ";
+							
+							tbHSizePadHash[countSizePadHash] = strTemp.size();
+                            cout << "tbHSizePadHash[" << countSizePadHash << "]: " << tbHSizePadHash[countSizePadHash]
+                                 << "  ";
+
+
+                            tbHIdxSizePadHash[hash] = countSizePadHash;
+                            cout << "tbHIdxSizePadHash[" << hash << "]: " << tbHIdxSizePadHash[hash] << "\n";
+
+							if(indexDebug == 753488){
+								std::cout <<"error "<<std::endl;
+							}
+
+                            hashEsgotadoPadraoAtual = true;
+                            countSizePadHash++;
+					}else{
+						int posIn = 0;
+                        int min = conttbHData;//int min = strlen(tbHData);
+
+                        posIn = min;
+                        int max = strTemp2.size() + conttbHData;//int max = strTemp2.size() + strlen(tbHData);
+                        int idx = 0;
+                        cout << "\n";
+						
+						//cout<<"min: "<<min<<"\n";
+						//cout<<"max: "<<max<<"\n";
+                        for (int d = min; d < max; d++) {
+							//if(strTemp2[idx] != '\0'){
+								tbHData[d] = strTemp2[idx];
+								idx = idx + 1;
+								cout << "[" << d << "]: " << tbHData[d] << '\n';
+								conttbHData = conttbHData + 1;
+
+								indexDebug =d;
+							//}
+						}
+						
+						
+						//cout<<">>>>>hash"<<hash<<"\n";
+						//cout<<">>>>>crash2"<<"\n";
+
+                        if (tbHContPadHash[hash] == 0) {//if (tbHPosData[hash] <= 0) { //exe:  -3453456 (lixo de memoria)
+                            tbHPosData[hash] = posIn + 1;
+                            cout << "tbHPosData[" << hash << "]: " << tbHPosData[hash] << "  ";
+                        }
+
+						
+
+                        int cont = tbHContPadHash[hash];
+                        tbHContPadHash[hash] = cont + 1;
+                        cout << "tbHContPadHash[" << hash << "]: " << tbHContPadHash[hash] << "  ";
+
+						
+ 
+                        tbHSizePadHash[countSizePadHash] = strTemp2.size();
+                        cout << "tbHSizePadHash[" << countSizePadHash << "]: " << tbHSizePadHash[countSizePadHash]
+                             << "  ";
+
+						
+						if(indexDebug == 753488){
+							std::cout <<"else error "<<std::endl;
+						}
+                        //if(tbHIdxSizePadHash[hash] < 0) {
+                        //    tbHIdxSizePadHash[hash] = countSizePadHash;
+                        //    cout << "tbHIdxSizePadHash[" << hash << "]: " << tbHIdxSizePadHash[hash] << "\n";
+                        //}
+
+                        hashEsgotadoPadraoAtual = true;
+						countSizePadHash++;
+						
+						
+					}
+				}
+			}
+			
+			
+
+			if (idxInicio2==idxFim2){
+                idxFim2 = idxFim2 + 1;
+                idxInicio2 = idxFim2;
+            }else{
+                idxInicio2 = idxInicio2 + 1;
+                idxFim2 = idxFim2 + 1;
+			}
+			
+			if(indexDebug == 753488){
+				std::cout <<"idxInicio2==idxFim2 end error "<<std::endl;
+				
+				std::cout <<idxFim2<<"<" << strTemp2.length() <<std::endl;
+			}
+			
+
+		}
+		
+		if(indexDebug == 753488){
+			std::cout <<"while end error "<<std::endl;
+		}
+
+		if(j == padroes.size()-1){
+			arrHashEsgotados.push_back(hash);
+			
+			if(indexDebug == 753488){
+				std::cout <<"arrHashEsgotados.push_back end error "<<std::endl;
+			}
+        }
+
+		if(indexDebug == 753488){
+			std::cout <<"numero padroes: "<<padroes.size()<<std::endl;
+			std::cout <<"index j:"<<j<<std::endl;
+		}
+	}
+
+	if(indexDebug == 753488){
+		std::cout <<"for end error "<<std::endl;
+	}
+	
+	//delete[] dataTemp2;
+	//free(dataTemp2);
+}
+
+void WMGPUInspection::vecPermu1_1_1(){
+
+	//char* dataTemp;//char* dataTemp;
+	//int sizeCharDT = B * sizeof(char);
+	size_t sizeChar = B * sizeof(char);//size_t sizeChar = tbHDataSize * sizeof(char);
+	//dataTemp = (char*) malloc(sizeCharDT);
+	//dataTemp = (char*) calloc(B,sizeCharDT);
+	dataTemp = (char*)calloc(B, sizeof(char));//dataTemp = (char*) calloc(tbHDataSize,sizeChar);
+    //vecpermu = std::vector<std::vector<std::string>>(nP,std::vector<std::string>());
+
+	
+	//tabelaHASH_ = std::vector<std::vector<std::string>> (M,std::vector<std::string>()); //2*nP
+
+    for (int i = 0; i < padroes.size() ; ++i) {
+        std::string strTemp = padroes[i];
+		std::string subStrPerm;
+		
+        int idxInicio = 0;
+		int idxFim = B -1;
+		
+		//cout<<"idxInicio: "<<idxInicio<<"\n";
+		//cout<<"idxFim: "<<idxFim<<"\n";
+		
+		std::cout <<"padrao: "<<strTemp<<std::endl;
+		
+        while(idxFim<strTemp.length()){
+			
+			subStrPerm = strTemp.substr(idxInicio,B);
+			//cout<<"subStrPerm: "<<subStrPerm<<std::endl;
+			int contDataTemp = 0;
+
+			
+			for (int p = 0; p <subStrPerm.size(); ++p) {
+				//if(subStrPerm[p] != '\0'){
+                	dataTemp[p] = subStrPerm[p];
+					cout<<dataTemp[p];
+					contDataTemp++;
+				//}
+			}
+			
+
+			int hash = 0;
+            for (int i = 0; i < contDataTemp; i++) {//for (int i = 0; i < strlen(dataTemp); i++) {
+                hash = hash + dataTemp[i] * (c ^ (i));
+                hash = hash % M;
+			}
+			
+			//cout<<"hash: "<<hash<<std::endl;
+			
+			if(!(hashEsgotado(hash))){
+                PrecarregaTabelaHash1_1_1(strTemp, hash,dataTemp);
+			}
+			
+			
+			
+			//PrecarregaTabelaHash(strTemp, hash,dataTemp);
+			//PrecarregaTabelaHash(subStrPerm,i);
+
+            if (idxInicio==idxFim){
+                idxFim = idxFim + 1;
+                idxInicio = idxFim;
+            }else{
+                idxInicio = idxInicio + 1;
+                idxFim = idxFim + 1;
+            }
+
+        }
+		
+    }
+	//std::cout <<"	padroes.size: "<<padroes.size()<<std::endl;
+	//std::cout <<"	tabelaHASH_.size: "<<tabelaHASH_.size()<<std::endl;
+
+	//delete[] dataTemp;
+	free(dataTemp);
+	free(dataTemp2);
+
+	std::cout << "Fim inicializacao de tabelas" << std::endl;
+}
 
 void WMCPUInspection::vecPermu(){
 

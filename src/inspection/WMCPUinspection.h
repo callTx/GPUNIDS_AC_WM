@@ -19,6 +19,7 @@ using namespace std;
 class WMCPUInspection : public Inspection
 {
     private:
+	int indexDebug;
 	bool nextInput =true;
     int maxs_;
 	std::vector<std::string> strFile;
@@ -36,6 +37,10 @@ class WMCPUInspection : public Inspection
 	std::vector<std::vector<std::string>> tabelaHASH_;
 	std::vector<std::vector<std::string>> tabelaPREFIX_;
 
+	int tbHDataSize = 0;
+	int countSizePadHash = 0;
+	int conttbHData = 0;
+
 	int N_;
 	int pos_;
 	int pref_;	
@@ -43,24 +48,49 @@ class WMCPUInspection : public Inspection
 	std::string subData_;
 	std::vector<std::string> listPotenPadr_;
 
+	char* tbHData;
+	int* tbHPosData;
+	int* tbHContPadHash;
+	int* tbHSizePadHash;
+	int* tbHIdxSizePadHash;
+
+	char* d_tbHData = NULL;
+	int* d_tbHPosData = NULL;
+	int* d_tbHContPadHash= NULL;
+	int* d_tbHSizePadHash= NULL;
+	int* d_tbHIdxSizePadHash =NULL;
+
+	int NUMBER_BLOCKS;
+	int THREADS_PER_BLOCk;
+
+	std::vector<int> arrHashEsgotados;
+
+	std::vector<std::string> padroes;
+
+	char* dataTemp;
+	char* dataTemp2;
+
     public:
         WMCPUInspection();
         WMCPUInspection(const Inspection &) = delete;
         WMCPUInspection& operator = (const Inspection &) = delete;
         ~WMCPUInspection();
 
+
         virtual void exec(std::shared_ptr<Packet> pkt);
 
         int buildMatchingMachine(std::string rules);
 		int buildMatchingMachineTeste(std::string rules);
 		int buildMatchingMachine1_1(std::string rules);
+		int buildMatchingMachine1_1_1(std::string rules);
 		int TmhMenorPadrao();
 		int TmhTodosPadroes();
 		double BlcStr();
 
     	void tabelaIdxHash();
 		void vecPermu(); 
-		void vecPermu1_1(); 
+		void vecPermu1_1();
+		void vecPermu1_1_1(); 
 		void TabelaHash();
 		void readfilesPadroes(std::string input);
 		void readfilesData(std::string pkt);
@@ -75,6 +105,7 @@ class WMCPUInspection : public Inspection
 		void excWuManberCore1_1(std::string nextData);
 
 		void PrecarregaTabelaHash(std::string subStr, int idxPadrao);
+		void PrecarregaTabelaHash1_1_1(std::string strTemp, int hash,char* dataTemp);
 		void PrecarregaTabelaPrefix(std::string subStr);
 };
 
