@@ -17,6 +17,8 @@
  * of the programming guide with some additions like error checking.
  */
 
+ //ProgramData\NVIDIA Corporation\CUDA Samples\v10.1\0_Simple\vectorAdd
+
 #include <stdio.h>
 
 // For the CUDA runtime routines (prefixed with "cuda_")
